@@ -1,13 +1,17 @@
-# Draft software citation. Confirm creator list and order before publication.
 cff-version: 1.2.0
-message: "Please cite the archived release of this analysis when reusing the code or data. Release DOI pending."
+message: "Please cite the analysis software when using the code or reproducing the results."
 type: software
 title: "BurnPro3D prescribed-fire DOE analysis"
+repository-code: "https://github.com/yeshvantmatey/bp3d-prescribed-fire-doe"
+license: MIT
+
 abstract: >-
-  Analysis and figure reproduction for a 1,600-run prescribed-fire simulation
-  ensemble. DOE means design of experiments. The package reproduces treatment
-  summaries from saved simulation outputs and does not include a complete
-  workflow for rerunning the original QUIC-Fire simulations.
+  Analysis code for a 1,600-run prescribed-fire simulation study using
+  BurnPro3D and QUIC-Fire. The design of experiments (DOE) evaluates
+  vegetation conditions, weather, and ignition layouts. The software
+  reproduces statistical analyses and treatment-response figures from
+  processed data tables.
+
 authors:
   - family-names: Matey
     given-names: Yeshvant
@@ -22,6 +26,7 @@ authors:
     given-names: Leticia
   - family-names: Altintas
     given-names: Ilkay
+
 keywords:
   - prescribed fire
   - vegetation treatment

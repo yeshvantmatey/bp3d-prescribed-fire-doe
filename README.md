@@ -58,6 +58,6 @@ The original simulation-generation workflow has not been recovered. Saved reques
 
 ## Citation and licensing
 
-The draft creator list in CITATION.cff follows the manuscript byline and needs review for the software release. Add the final dataset DOI, code version, and repository URL before publication. Archive the matching code snapshot with the dataset or link a separate software DOI if one is created. A license has not yet been selected for this local candidate. QUIC-Fire and BurnPro3D engine code are not included.
+The draft creator list in CITATION.cff follows the manuscript byline and needs review for the software release. Add the final dataset DOI, code version, and repository URL before publication. Archive the matching code snapshot with the dataset or link a separate software DOI if one is created.The [MIT License](LICENSE) applies to the analysis code only. A separate license for the processed datasets will be specified in the Zenodo record. QUIC-Fire and BurnPro3D engine code are not included.
 
 The manuscript availability statement should be updated only after the actual deposited files and links are confirmed. See the release checklist for the recommended GitHub and Zenodo sequence.

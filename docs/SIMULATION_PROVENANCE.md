@@ -63,7 +63,7 @@ Partial verification used the first sorted one-layer run. The three final metric
 
 ## Portability, privacy and licensing observations
 
-No `AGENTS.md`, `LICENSE`, `LICENSE.md`, `LICENSE.txt` or `COPYING` was found in the current directory or its ancestors. This observation does not establish ownership or third-party redistribution rights. Choose and confirm a data license and a code license before public release; do not imply QUIC-Fire or BurnPro3D itself is redistributed under the analysis-repository license.
+The original analysis code is licensed under the [MIT License](../LICENSE). The processed CSV datasets in `data/source/` and `data/reference/` are licensed under [CC BY 4.0](../LICENSE-DATA.md). QUIC-Fire and BurnPro3D engine code are not included or relicensed by the analysis repository.
 
 Notebook sources contain personal absolute Windows paths (four code cells in Paper_1, two in Paper_2, two in Paper_3); all three notebooks retain stored outputs. Use portable scripts or cleared, reconciled notebooks for release. A keyword scan found no common credential markers (`api_key`, `access_token`, password, authorization, bearer) in these notebook files or six failure logs. This was a limited targeted scan, not a comprehensive secrets certification. Failure logs and irrelevant notebook outputs are unnecessary in the minimal public release.
 

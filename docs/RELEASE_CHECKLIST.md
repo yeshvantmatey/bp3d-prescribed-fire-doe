@@ -1,43 +1,35 @@
-# Release decisions and publication sequence
+# Release procedure
 
-This directory is a local preparation of an analysis repository. No GitHub repository, Zenodo record, public release, or DOI has been created by this preparation.
+Repository: [yeshvantmatey/bp3d-prescribed-fire-doe](https://github.com/yeshvantmatey/bp3d-prescribed-fire-doe).
 
-## Decisions before publication
+## Confirmed release scope
 
-1. Confirm the GitHub owner and repository name. Proposed name: `bp3d-prescribed-fire-doe`. The connected personal account is `yeshvantmatey`; an institutional owner can be used instead.
-2. Confirm the dataset/software creator lists, order, affiliations, and ORCIDs. CITATION.cff is a draft based on the manuscript byline. Dataset authorship and software authorship may differ.
-3. Select licenses for code and data and confirm any applicable ownership requirements. Proposed choices for review are MIT for original analysis code and CC BY 4.0 for the data/documentation. No license has been applied yet. Do not assume QUIC-Fire or BurnPro3D engine code can be redistributed under the analysis-code license.
-4. Public-data scope is decided: publish processed CSVs and supporting tables only. Keep files for all 1,600 simulations locally and supply them upon request. Exclude arrays, simulation input decks, logs, and simulation archives from both GitHub and Zenodo.
-5. Confirm a release version and descriptive title. Use the same version in the repository release, software citation, dataset metadata, and checksums.
-6. Review the known provenance limits. Saved outputs support analysis reproduction, but the original simulation-generation workflow and fully reconciled execution inputs have not been recovered. The data availability statement must not promise exact rerunning of the original ensemble.
+- Original analysis code uses the [MIT License](../LICENSE).
+- Processed CSV datasets in `data/source/` and `data/reference/` use [CC BY 4.0](../LICENSE-DATA.md).
+- The software citation lists Yeshvant Matey, Raymond de Callafon, Melissa Floca, Daniel Crawl, Leticia Lee, and Ilkay Altintas in that order, as confirmed by the corresponding author. The citation metadata are in [CITATION.cff](../CITATION.cff).
+- Files for all 1,600 simulations remain with the authors and are available upon request. Simulation arrays, input decks, logs, and simulation archives are excluded from the public repository and deposit.
+- The public package reproduces analyses and Figures 4-10 from processed data. Complete reconstruction and rerunning of the original simulations requires additional execution provenance; see [SIMULATION_PROVENANCE.md](SIMULATION_PROVENANCE.md).
 
-## Recommended records
+## Prepare and publish a version
 
-Create a Zenodo dataset record for the processed CSVs, derived tables, dictionary, provenance, and checksums. No simulation files are included. Maintain the analysis code in GitHub and archive a matching tagged code snapshot with the Zenodo dataset or as a separate software record. A second DOI is optional. Link the dataset, code release, and paper with related identifiers. Keep the data and code licenses explicit.
+1. Review the changed files and select a release version. Keep the version in the software citation consistent with the GitHub release tag. Add a release date and archival DOI only when the values are known.
+2. Run `python run_all.py` when code, dependencies, or input data change. Compare the generated results with the reference tables and inspect affected figures. For documentation-only edits, verify links, licensing scope, and file integrity.
+3. Refresh `SHA256SUMS.txt` after all file edits. The list covers every distributed file except itself; it excludes generated outputs, caches, and Git's internal directory. The hashes identify the exact release files.
+4. Commit the reviewed files, confirm that simulation files are absent, and create the GitHub release from the checked commit. Set repository visibility according to the intended publication stage.
+5. Archive the matching processed CSVs, supporting results, documentation, and code version on Zenodo or another suitable archive. Confirm dataset creators, version, descriptive metadata, and the applicable code/data licenses. The data may be included with a frozen code snapshot or linked to a separate software record; a second DOI is optional.
+6. If using Zenodo's GitHub integration, enable the repository before creating the release intended for automatic archiving. If the release already exists, a manual software upload is also available.
+7. Verify the published archive, DOI landing page, and downloadable files. Add the actual archival identifier to the repository citation and manuscript availability statement. Describe the processed data as public only after publication, and retain simulation-file availability upon request.
 
-For a compact combined record, Zenodo also supports mixed data/software deposits with the applicable licenses. A separate data record makes it easier to update large data independently of code.
+## Supporting documentation
 
-## Publication sequence
+The [data dictionary](DATA_DICTIONARY.md) explains variables and units. [Code provenance](CODE_PROVENANCE.md), [data export mapping](DATA_EXPORT_MANIFEST.json), and [reproduction checks](REPRODUCTION_CHECK.json) document the verified analysis and export. No simulation rerun is implied by successful postprocessing checks.
 
-1. Complete the creator, license, and version choices. The processed-data-only release scope is already decided.
-2. Run the documented reproduction command from a clean checkout and retain the validation report and environment versions.
-3. Freeze the dataset and record SHA-256 hashes for the release files.
-4. Create the chosen GitHub repository, push the reviewed code, and verify the README and citation metadata online.
-5. Create a Zenodo dataset draft, upload the reviewed files, fill the metadata, and reserve its DOI if desired.
-6. Enable the GitHub repository in Zenodo before making the code release if automatic release archiving is preferred. New releases are ingested automatically after integration is enabled.
-7. Publish the data and code records when ready, and verify the DOI landing pages and downloadable files.
-8. Update the manuscript data/code availability statement with the actual dataset DOI, GitHub URL and code version, an optional separate software DOI, the supported reproducibility scope, and simulation-file availability upon request.
-
-A DOI reserved in a manual Zenodo draft is not registered until publication. Zenodo's GitHub integration does not allow preregistering the code-release DOI; a manual software upload is an alternative. Do not put invented or placeholder DOIs into the submitted manuscript.
-
-## Official guidance checked on 2026-11-16
+## Official guidance
 
 - [Create a Zenodo upload and reserve a DOI](https://help.zenodo.org/docs/deposit/create-new-upload/)
-- [Files, open formats, and size limits](https://help.zenodo.org/docs/deposit/manage-files/)
 - [Licenses and mixed-license uploads](https://help.zenodo.org/docs/deposit/describe-records/licenses/)
 - [Enable GitHub integration](https://help.zenodo.org/docs/github/enable-repository/)
 - [Archive a GitHub release](https://help.zenodo.org/docs/github/archive-software/github-upload/)
 - [CITATION.cff metadata](https://help.zenodo.org/docs/github/describe-software/citation-file/)
-- [DOI reservation and GitHub releases](https://support.zenodo.org/help/en-gb/24-github-integration/73-can-i-pre-reserved-a-doi-before-a-github-release)
 
-Zenodo currently permits up to 100 files and 50 GB per record under its standard quota. When both CITATION.cff and .zenodo.json exist, Zenodo uses .zenodo.json for GitHub-release metadata. This draft therefore uses CITATION.cff only; avoid adding a second competing metadata file without maintaining both.
+A DOI reserved in a manual Zenodo draft is registered when the record is published. If both CITATION.cff and .zenodo.json are supplied to Zenodo's GitHub integration, Zenodo uses .zenodo.json for its metadata. Maintain one authoritative metadata source for the archive.

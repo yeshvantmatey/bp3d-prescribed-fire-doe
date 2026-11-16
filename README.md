@@ -4,8 +4,6 @@ Reproduce the statistical analyses and corrected Figures 4–10 for a 1,600-run 
 
 The analysis compares consumption fraction C(T), active treatment area A(T), and consumption patchiness P(T) at the final time T, along with consumption and active-area development over time. The experiments span five fuel models, five curing-state categories, four ignition layouts, four wind speeds, and four surface fuel-moisture levels.
 
-**Release status:** local candidate prepared for review. Repository owner, licenses, creator metadata, release version, and archival DOIs remain to be finalized. No public availability is claimed by this draft.
-
 ## Run the analysis
 
 Use Python 3.12 in a separate environment. From the repository root:
@@ -33,8 +31,8 @@ Outputs are written to `outputs/`. The source CSVs are never modified. Any faile
 | `docs/DATA_DICTIONARY.md` | Variables, units, denominator rules, missing values, and aggregation |
 | `docs/CODE_PROVENANCE.md` | Origins and adaptation of analysis and figure scripts |
 | `docs/SIMULATION_PROVENANCE.md` | Available simulation evidence and unresolved execution provenance |
-| `docs/RELEASE_CHECKLIST.md` | Remaining metadata and publication steps |
-| `CITATION.cff` | Draft software citation metadata |
+| `docs/RELEASE_CHECKLIST.md` | Procedure for versioned releases and archiving |
+| `CITATION.cff` | Software citation metadata |
 
 The source CSV preserves `wind_speed_mph` and moisture ratios. Figures convert nominal wind values to m/s using 0.44704 and moisture ratios to percentages using 100. `time_index` is an output index with 60-second spacing, so indices 0–60 correspond to 0–60 minutes. Threshold blanks mean the threshold was not reached, while reach percentages include all 400 runs per layout. See the dictionary for full definitions.
 
@@ -48,7 +46,7 @@ python scripts/recompute_metrics_from_density.py --archive /path/to/density_outp
 
 For a deliberately partial smoke check, append `--limit 1`. The extraction report identifies the processed runs, array hashes, eligible-cell counts, output interval, and whether the extraction is partial. The command does not invoke a simulator. It writes separate results so the supplied source CSVs remain available for comparison.
 
-Zenodo will hold the versioned processed CSVs, summary tables, figure-value tables, and documentation. The processed CSV copies currently included in this local GitHub candidate make the example self-contained; they may remain as convenience mirrors of the same versioned Zenodo data. They are derived response tables, not simulation files.
+The processed CSVs are included so the analysis can run directly. A matching version of the processed data and code is intended for archiving on Zenodo.
 
 ## Reproducibility scope
 
@@ -58,6 +56,8 @@ The original simulation-generation workflow has not been recovered. Saved reques
 
 ## Citation and licensing
 
-The draft creator list in CITATION.cff follows the manuscript byline and needs review for the software release. Add the final dataset DOI, code version, and repository URL before publication. Archive the matching code snapshot with the dataset or link a separate software DOI if one is created.The [MIT License](LICENSE) applies to the analysis code only. A separate license for the processed datasets will be specified in the Zenodo record. QUIC-Fire and BurnPro3D engine code are not included.
+Software citation metadata are provided in [CITATION.cff](CITATION.cff).
 
-The manuscript availability statement should be updated only after the actual deposited files and links are confirmed. See the release checklist for the recommended GitHub and Zenodo sequence.
+The [MIT License](LICENSE) applies to the analysis code. The processed CSV datasets in `data/source/` and `data/reference/` are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DATA.md).
+
+QUIC-Fire and BurnPro3D engine code are not included. See the [release procedure](docs/RELEASE_CHECKLIST.md) for creating a versioned release and linking the archived data and code.

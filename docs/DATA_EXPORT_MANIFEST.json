@@ -1,0 +1,34 @@
+{
+  "scope": "Local release candidate, not yet published",
+  "data_exports": [
+    {
+      "source": "doe_analysis_ready_response_table.csv",
+      "public_file": "data/source/doe_analysis_ready_response_table.csv",
+      "rows": 1600,
+      "columns": [
+        "run_id",
+        "fuel_model",
+        "curing_state",
+        "ignition_family",
+        "ignition_structure",
+        "ignition_pattern",
+        "wind_speed_mph",
+        "surface_moisture",
+        "consumption_fraction_surface",
+        "active_consumed_area_fraction_1pct",
+        "cell_consumption_cv"
+      ],
+      "transformation": "Select columns only; preserve all retained CSV field strings and row order exactly",
+      "source_sha256": "e71bc03fd97a9f2389b210fc6a9c3781ed74a44777af177a69246798168fdcc1",
+      "public_sha256": "2c415f5501cbdc087b10c065e74b105241b6f38e3ff1cc94bde85245b318a51b"
+    },
+    {
+      "source": "Paper/data/paper2_fuel_consumption_active_area_timeseries.csv",
+      "public_file": "data/source/paper2_fuel_consumption_active_area_timeseries.csv",
+      "rows": 97600,
+      "transformation": "Byte-for-byte copy",
+      "source_sha256": "96aa2508b5c607337e913e3eaed1835e654ab25808cccca0f7baa2d9e26fe685",
+      "public_sha256": "96aa2508b5c607337e913e3eaed1835e654ab25808cccca0f7baa2d9e26fe685"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "status": "passed",
+  "scope": "Standalone unpacked repository using the documented pinned dependency versions; no network or manuscript access required",
+  "command": "python run_all.py",
+  "final_state_rows": 1600,
+  "time_series_rows": 97600,
+  "recomputed_csv_tables": 15,
+  "generated_figure_pngs": 7,
+  "generated_figure_pdfs": 7,
+  "standalone_reference_checks": {
+    "status": "passed",
+    "absolute_tolerance": 1e-11,
+    "checks": [
+      {
+        "actual": "pooled_omega_squared.csv",
+        "reference": "fig4_omega_squared.csv",
+        "rows": 12,
+        "fields": [
+          "Active area",
+          "Consumption",
+          "Patchiness"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "heatmap_values.csv",
+        "reference": "fig5_heatmap_values.csv",
+        "rows": 75,
+        "fields": [
+          "mean_value",
+          "n_runs"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "wind_means.csv",
+        "reference": "verified_wind_response_by_fuel_model.csv",
+        "rows": 20,
+        "fields": [
+          "mean_C_T",
+          "n_runs"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "moisture_means.csv",
+        "reference": "verified_moisture_response_by_fuel_model.csv",
+        "rows": 20,
+        "fields": [
+          "mean_C_T",
+          "n_runs"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "pooled_strip_minus_flank.csv",
+        "reference": "fig7_pooled_contrasts.csv",
+        "rows": 25,
+        "fields": [
+          "mean_consumption_Strip",
+          "mean_consumption_Flank",
+          "delta_mean_consumption_strip_minus_flank",
+          "mean_active_area_Strip",
+          "mean_active_area_Flank",
+          "delta_mean_active_area_strip_minus_flank",
+          "mean_patchiness_Strip",
+          "mean_patchiness_Flank",
+          "delta_mean_patchiness_strip_minus_flank"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "winners.csv",
+        "reference": "fig8_winners.csv",
+        "rows": 25,
+        "fields": [
+          "best_for_consumption",
+          "best_for_active_area",
+          "best_for_low_patchiness"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "top_two_margins.csv",
+        "reference": "fig8_top_two_margins.csv",
+        "rows": 25,
+        "fields": [
+          "best_pattern_consumption",
+          "best_value_consumption",
+          "second_pattern_consumption",
+          "second_value_consumption",
+          "margin_consumption",
+          "best_pattern_active_area",
+          "best_value_active_area",
+          "second_pattern_active_area",
+          "second_value_active_area",
+          "margin_active_area",
+          "best_pattern_low_patchiness",
+          "best_value_low_patchiness",
+          "second_pattern_low_patchiness",
+          "second_value_low_patchiness",
+          "margin_low_patchiness"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "temporal_layout_summary.csv",
+        "reference": "fig9_temporal_layout_summary.csv",
+        "rows": 4,
+        "fields": [
+          "n_runs",
+          "mean_final_consumption",
+          "median_final_consumption",
+          "mean_auc_consumption",
+          "median_auc_consumption",
+          "n_reached_t10_consumption",
+          "reached_t10_consumption",
+          "percentage_reached_t10_consumption",
+          "median_t10_consumption",
+          "n_reached_t50_consumption",
+          "reached_t50_consumption",
+          "percentage_reached_t50_consumption",
+          "median_t50_consumption",
+          "n_reached_t80_consumption",
+          "reached_t80_consumption",
+          "percentage_reached_t80_consumption",
+          "median_t80_consumption",
+          "mean_final_active_area",
+          "median_final_active_area",
+          "mean_auc_active_area",
+          "median_auc_active_area",
+          "n_reached_t10_active_area",
+          "reached_t10_active_area",
+          "percentage_reached_t10_active_area",
+          "median_t10_active_area",
+          "n_reached_t50_active_area",
+          "reached_t50_active_area",
+          "percentage_reached_t50_active_area",
+          "median_t50_active_area"
+        ],
+        "maximum_absolute_difference": 0.0
+      },
+      {
+        "actual": "condition_layout_curves.csv",
+        "reference": "fig10_curve_points.csv",
+        "rows": 976,
+        "fields": [
+          "mean_consumption_t",
+          "median_consumption_t",
+          "mean_active_area_t",
+          "median_active_area_t",
+          "n_runs"
+        ],
+        "maximum_absolute_difference": 0.0
+      }
+    ],
+    "scope": "Recalculation of archived analyses from public CSV exports; no new simulation runs."
+  },
+  "raw_extractor_scope": "Two-array smoke check only; see SIMULATION_PROVENANCE.md"
+}

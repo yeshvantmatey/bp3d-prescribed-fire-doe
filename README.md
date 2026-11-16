@@ -1,5 +1,7 @@
 # BurnPro3D prescribed-fire DOE analysis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24294778.svg)](https://doi.org/10.5281/zenodo.24294778)
+
 Reproduce the statistical analyses and corrected Figures 4–10 for a 1,600-run prescribed-fire simulation ensemble. BurnPro3D is the simulation workflow used for the study, QUIC-Fire is the fire model, and DOE means design of experiments.
 
 The analysis compares consumption fraction C(T), active treatment area A(T), and consumption patchiness P(T) at the final time T, along with consumption and active-area development over time. The experiments span five fuel models, five curing-state categories, four ignition layouts, four wind speeds, and four surface fuel-moisture levels.
@@ -46,7 +48,7 @@ python scripts/recompute_metrics_from_density.py --archive /path/to/density_outp
 
 For a deliberately partial smoke check, append `--limit 1`. The extraction report identifies the processed runs, array hashes, eligible-cell counts, output interval, and whether the extraction is partial. The command does not invoke a simulator. It writes separate results so the supplied source CSVs remain available for comparison.
 
-The processed CSVs are included so the analysis can run directly. A matching version of the processed data and code is intended for archiving on Zenodo.
+The processed CSVs are included so the analysis can run directly. Version 1.0.0 of the code and processed datasets is archived on [Zenodo (DOI: 10.5281/zenodo.24294778)](https://doi.org/10.5281/zenodo.24294778).
 
 ## Reproducibility scope
 
@@ -56,7 +58,7 @@ The original simulation-generation workflow has not been recovered. Saved reques
 
 ## Citation and licensing
 
-Software citation metadata are provided in [CITATION.cff](CITATION.cff).
+Please cite the archived v1.0.0 release when using the code or processed datasets. Software citation metadata are provided in [CITATION.cff](CITATION.cff).
 
 The [MIT License](LICENSE) applies to the analysis code. The processed CSV datasets in `data/source/` and `data/reference/` are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DATA.md).
 
